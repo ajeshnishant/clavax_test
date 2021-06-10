@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+ <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <!-- Home Page-->
+          <li><a class="navbar-brand" href="{% url 'dappx:base' %}">Enrollment App</a></li>
+        </div>
+</nav>
+<div class="container theme-showcase margin-top-navbar" role="main" style="margin-top: 50px">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped table-bordered table-sm">
+    {% if data is not None %}
+      <!-- student detail information-->
+                <tr><td>Sno:</td><td>{{ data.id }}</td></tr>
+                <tr><td>Student Name:</td><td>{{ data.studentname }}</td></tr>
+                <tr><td>Father's Name:</td><td>{{ data.fathersname }}</td></tr>
+                <tr><td>Dob:</td><td>{{ data.dob }}</td></tr>
+                <tr><td>Address:</td><td>{{ data.address }}</td></tr>
+                <tr><td>City:</td><td>{{ data.city }}</td></tr>
+                <tr><td>State:</td><td>{{ data.state }}</td></tr>
+                <tr><td>Pin:</td><td>{{ data.pin }}</td></tr>
+                <tr><td>Phone:</td><td>{{ data.phone }}</td></tr>
+                <tr><td>Email:</td><td>{{ data.email }}</td></tr>
+                <tr><td>Class:</td><td>{{ data.classopted }}</td></tr>
+                <tr><td>Marks %:</td><td>{{ data.marks }}</td></tr>
+                <tr><td>Date Enrolled:</td><td>{{ data.dateenrolled }}</td></tr>
+    {% else %}
+        <tr>
+            <td>No student data returned.</td>
+        </tr>
+    {% endif %}
+            </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
